@@ -8,7 +8,7 @@ import transformationImage from "../assets/53 ans.png";
   <!-- HERO avec animation et image de fond -->
 <section
 class="flex flex-col justify-center items-center text-center h-screen px-6 bg-cover bg-center relative"
-style={{ backgroundImage: `url(${heroImage.src})` }}
+style={{ backgroundImage: `url(${import.meta.env.BASE-URL}${heroImage.src})` }}
 >
 <!-- Overlay dégradé semi-transparent -->
 <div class="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-orange-500/70"></div>
