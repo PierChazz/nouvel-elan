@@ -6,40 +6,39 @@ import transformationImage from "../assets/53 ans.png";
 
 <Layout title="Accueil">
   <!-- HERO avec animation et image de fond -->
-  <section
-  class="flex flex-col justify-center items-center text-center h-screen px-6 bg-cover bg-center"
-  style={`background-image: linear-gradient(rgba(30, 58, 138, 0.7), rgba(255, 107, 53, 0.7)), url(${heroImage})`}
+<section
+class="flex flex-col justify-center items-center text-center h-screen px-6 bg-cover bg-center"
+style={'background-image: linear-gradient(rgba(30, 58, 138, 0.7), rgba(255, 107, 53, 0.7)), url(${heroImage})'}
 >
+<!-- Conteneur pour le texte -->
+<div class="overflow-hidden mb-8 w-full max-w-8xl h-auto md:h-[120px]">
+<h1 id="scrolling-text" class="text-4xl md:text-5xl font-bold text-white">
+Retrouvez Forme, Énergie & Confiance Après 40 Ans
+</h1>
+</div>
 
+<!-- Sous-titre -->
+<p class="text-lg md:text-xl mb-8 text-white max-w-2xl mx-auto animate-fade-in">
+Un coaching sur-mesure pour les hommes de 40 ans et plus qui veulent transformer leur corps, leur énergie et leur confiance.
+</p>
 
-     <!-- Conteneur pour le texte -->
-    <div class="overflow-hidden mb-8 w-full max-w-8xl h-[120px]"> <!-- Ajuste la hauteur selon ton texte -->
-      <h1 class="text-4xl md:text-5xl font-bold text-white" id="scrolling-text">
-        Retrouvez Forme, Énergie & Confiance Après 40 Ans
-      </h1>
-    </div>
+<!-- Boutons espacés -->
+<div class="flex flex-col sm:flex-row gap-4">
+<a
+href="/questionnaire"
+class="btn bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition-all"
+>
+Faire mon bilan bien-être
+</a>
+<a
+href="#contact"
+class="btn bg-orange-500 text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-orange-600 transition-all"
+>
+Réserver mon appel découverte gratuit
+</a>
+</div>
+</section>
 
-    <!-- Sous-titre -->
-    <p class="text-lg md:text-xl mb-8 text-white max-w-2xl mx-auto animate-fade-in">
-      Un coaching sur-mesure pour les hommes de 40 ans et plus qui veulent transformer leur corps, leur énergie et leur confiance.
-    </p>
-
-    <!-- Boutons espacés -->
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a
-        href="/questionnaire"
-        class="btn bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition-all"
-      >
-        Faire mon bilan bien-être
-      </a>
-      <a
-        href="#contact"
-        class="btn bg-orange-500 text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-orange-600 transition-all"
-      >
-        Réserver mon appel découverte gratuit
-      </a>
-    </div>
-  </section>
 
   <!-- POURQUOI CE COACHING ? -->
   <section id="apropos" class="py-20 bg-white px-6">
@@ -186,30 +185,247 @@ Cette transformation ne fut pas seulement physique, mais aussi intérieure : j�
 
 <!-- Animations CSS -->
 <style>
-  @keyframes scrollText {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(0%); }
-  }
+@keyframes scrollText {
+0% { transform: translateX(100%); }
+100% { transform: translateX(0%); }
+}
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
 
-  .animate-fade-in {
-    animation: fadeIn 1.5s ease-out;
-  }
+.animate-fade-in {
+animation: fadeIn 1.5s ease-out;
+}
 
-  #scrolling-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scrollText 2s ease-out forwards;
-  }
+@media (min-width: 768px) {
+#scrolling-text {
+display: inline-block;
+white-space: nowrap;
+animation: scrollText 2s ease-out forwards;
+}
+}
 
-  @media (max-width: 768px) {
-    #scrolling-text {
-      white-space: normal;
-      animation: none;
-    }
-  }
+@media (max-width: 767px) {
+#scrolling-text {
+white-space: normal;
+animation: none;
+}
+}
+</style>---
+import Layout from "../layouts/Layout.astro";
+import heroImage from "../assets/creative-christians-XNJK6Mz6vdM-unsplash.jpg?url";
+import transformationImage from "../assets/53 ans.png";
+---
+
+<Layout title="Accueil">
+  <!-- HERO avec animation et image de fond -->
+<section
+class="flex flex-col justify-center items-center text-center h-screen px-6 bg-cover bg-center"
+style={'background-image: linear-gradient(rgba(30, 58, 138, 0.7), rgba(255, 107, 53, 0.7)), url(${heroImage})'}
+>
+<!-- Conteneur pour le texte -->
+<div class="overflow-hidden mb-8 w-full max-w-8xl h-auto md:h-[120px]">
+<h1 id="scrolling-text" class="text-4xl md:text-5xl font-bold text-white">
+Retrouvez Forme, Énergie & Confiance Après 40 Ans
+</h1>
+</div>
+
+<!-- Sous-titre -->
+<p class="text-lg md:text-xl mb-8 text-white max-w-2xl mx-auto animate-fade-in">
+Un coaching sur-mesure pour les hommes de 40 ans et plus qui veulent transformer leur corps, leur énergie et leur confiance.
+</p>
+
+<!-- Boutons espacés -->
+<div class="flex flex-col sm:flex-row gap-4">
+<a
+href="/questionnaire"
+class="btn bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition-all"
+>
+Faire mon bilan bien-être
+</a>
+<a
+href="#contact"
+class="btn bg-orange-500 text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-orange-600 transition-all"
+>
+Réserver mon appel découverte gratuit
+</a>
+</div>
+</section>
+
+
+  <!-- POURQUOI CE COACHING ? -->
+  <section id="apropos" class="py-20 bg-white px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-12 fade-up">Pourquoi ce coaching est fait pour vous ?</h2>
+      <p class="text-lg text-gray-700 mb-8 fade-up fade-delay-1">
+        Vous avez pris du poids, vous vous sentez <strong>fatigué ou démotivé</strong>, et vous pensez que votre meilleure forme est derrière vous ?
+        <br />
+        <strong>Ce n’est pas une fatalité.</strong> Avec une méthode adaptée, vous pouvez retrouver un corps tonique, une énergie durable et une confiance en vous.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+        <!-- Freins -->
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500 fade-up">
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">✅ Manque de motivation</h3>
+          <p class="text-gray-600">Retrouvez l’envie d’agir avec des objectifs clairs et réalistes.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500 fade-up fade-delay-1">
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">✅ Excès alimentaires</h3>
+          <p class="text-gray-600">Mangez équilibré sans frustration, avec des repas adaptés à votre vie.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500 fade-up fade-delay-2">
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">✅ Sédentarité</h3>
+          <p class="text-gray-600">Intégrez le mouvement dans votre quotidien, étape par étape.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-orange-500 fade-up fade-delay-3">
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">✅ Stress et mauvais sommeil</h3>
+          <p class="text-gray-600">Retrouvez un équilibre durable pour une énergie au quotidien.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POUR QUI ? -->
+  <section id="resultats" class="py-20 bg-gray-50 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-12 fade-up">Ce coaching est fait pour vous si...</h2>
+      <ul class="text-lg text-gray-700 list-none space-y-3 max-w-2xl mx-auto fade-up fade-delay-1">
+        <li>✔️ Vous avez <strong>40 ans ou plus</strong> et voulez reprendre le contrôle de votre forme.</li>
+        <li>✔️ Vous avez pris <strong>+10 à 20 kg</strong> par rapport à votre poids de forme.</li>
+        <li>✔️ Vous souffrez de <strong>fatigue chronique</strong> ou d’un manque d’énergie.</li>
+        <li>✔️ Vous pensez que *"c’est trop tard pour changer"*.</li>
+        <li>✔️ Vous cherchez une <strong>méthode durable</strong>, sans régime contraignant.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4 PILIERS -->
+  <section id="programme"class="py-20 bg-white px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-12 fade-up">4 piliers pour une transformation durable</h2>
+      <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto fade-up fade-delay-1">
+        Ma méthode repose sur <strong>4 piliers clés</strong> pour une transformation globale, sans frustration ni extrême.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Pilier 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-orange-500 fade-up">
+          <div class="text-4xl mb-4 text-orange-500">🍽️</div>
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">Alimentation intelligente</h3>
+          <p class="text-gray-600">Mangez sainement, sans privation ni régime restrictif.</p>
+        </div>
+        <!-- Pilier 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-orange-500 fade-up fade-delay-1">
+          <div class="text-4xl mb-4 text-orange-500">🏃</div>
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">Activité physique adaptée</h3>
+          <p class="text-gray-600">Bougez avec plaisir et régularité, à votre rythme.</p>
+        </div>
+        <!-- Pilier 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-orange-500 fade-up fade-delay-2">
+          <div class="text-4xl mb-4 text-orange-500">🔄</div>
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">Discipline & régularité</h3>
+          <p class="text-gray-600">Installez des habitudes durables, sans pression.</p>
+        </div>
+        <!-- Pilier 4 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-orange-500 fade-up fade-delay-3">
+          <div class="text-4xl mb-4 text-orange-500">🌿</div>
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">Mode de vie aligné</h3>
+          <p class="text-gray-600">Trouvez l’équilibre entre rigueur et plaisir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI MOI ? -->
+  <section class="py-20 bg-gray-50 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-blue-700 mb-12 text-center fade-up">Pourquoi je peux vous aider ?</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 fade-up">
+          <p class="text-lg text-gray-700 mb-4">
+	    Ce programme est né d’une <strong>expérience personnelle forte.</strong>
+Après avoir traversé une dépression, une prise de poids et une perte totale d’énergie, j’ai choisi de me reprendre en main. Grâce à un travail sur la discipline, l’alimentation et le sport, j’ai retrouvé une véritable forme physique, un mental solide et une hygiène de vie équilibrée que je pensais perdus.
+Cette transformation ne fut pas seulement physique, mais aussi intérieure : j’ai regagné confiance en moi, détermination et sérénité. Aujourd’hui, je souhaite transmettre ce chemin à d’autres, en leur montrant qu’il n’est jamais trop tard pour changer.
+                      </p>
+          <p class="text-lg text-gray-700">
+            <strong>15 ans d’expérience</strong> dans l’accompagnement humain + une transformation personnelle réelle = un coach qui comprend vos blocages et sait comment les dépasser.
+          </p>
+        </div>
+        <div class="md:w-1/2 fade-up fade-delay-1">
+          <img
+            src={transformationImage.src}
+            alt="Transformation Pierre Charvoz, coach Après40"
+            class="w-full rounded-lg shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TÉMOIGNAGES -->
+  <section class="py-20 bg-gray-50 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-12 fade-up">Ils ont transformé leur vie</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm fade-up">
+          <p class="text-gray-700 mb-4">"Grâce à Pierre, j’ai retrouvé une énergie et une envie que je pensais perdues. Sa méthode est réaliste et humaine."</p>
+          <cite class="font-semibold text-blue-700">– Jean, 48 ans</cite>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm fade-up fade-delay-1">
+          <p class="text-gray-700 mb-4">"Je pensais que c’était trop tard pour changer. Aujourd’hui, je cours 3 fois par semaine et je me sens en pleine forme !"</p>
+          <cite class="font-semibold text-blue-700">– Marc, 52 ans</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA FINAL -->
+  <section id="contact" class="py-24 bg-blue-600 text-center text-white px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 fade-up">Prêt à passer à l’action ?</h2>
+      <p class="text-lg mb-8 fade-up fade-delay-1">
+        Fais le premier pas vers ta transformation dès aujourd’hui avec un <strong>appel découverte gratuit de 30 minutes</strong>.
+      </p>
+      <a
+        href="mailto:contact@apres40.fr?subject=Appel découverte Après40 Coaching"
+        class="btn bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 fade-up fade-delay-2"
+      >
+        Réserver mon appel gratuit
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<!-- Animations CSS -->
+<style>
+@keyframes scrollText {
+0% { transform: translateX(100%); }
+100% { transform: translateX(0%); }
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+animation: fadeIn 1.5s ease-out;
+}
+
+@media (min-width: 768px) {
+#scrolling-text {
+display: inline-block;
+white-space: nowrap;
+animation: scrollText 2s ease-out forwards;
+}
+}
+
+@media (max-width: 767px) {
+#scrolling-text {
+white-space: normal;
+animation: none;
+}
+}
 </style>
