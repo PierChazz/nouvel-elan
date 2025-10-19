@@ -1,0 +1,211 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title ? `${title} | Après40 Coaching` : "Après40 Coaching"}</title>
+    <!-- Balises meta pour le référencement -->
+    <meta name="description" content="Coaching pour les hommes de 40 ans et plus : retrouvez forme, énergie et confiance avec une méthode durable et sans frustration." />
+    <!-- Lien vers une police moderne (optionnel) -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      /* Animations pour les sections */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .fade-up {
+        animation: fadeUp 0.6s ease-out forwards;
+        opacity: 0;
+      }
+      .fade-delay-1 { animation-delay: 0.2s; }
+      .fade-delay-2 { animation-delay: 0.4s; }
+      .fade-delay-3 { animation-delay: 0.6s; }
+      .fade-delay-4 { animation-delay: 0.8s; }
+      /* Style pour le body et la police */
+      body {
+        font-family: 'Manrope', sans-serif;
+      }
+
+      /* Menu burger */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+      }
+      .menu-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: #3b82f6;
+        transition: all 0.3s ease;
+      }
+      .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 40;
+        padding: 20px 0;
+      }
+      .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .mobile-menu li {
+        text-align: center;
+        padding: 10px 0;
+      }
+      .mobile-menu a {
+        color: #3b82f6;
+        font-weight: 500;
+      }
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: flex;
+        }
+        nav ul {
+          display: none;
+        }
+        .mobile-menu.active {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-manrope text-gray-800 bg-gray-50">
+    <!-- HEADER FIXE -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+      <nav class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+        <!-- Logo mis à jour avec "Après40" -->
+        <a href="/" class="text-xl font-semibold tracking-wide">
+          <span class="text-blue-700">Après</span>
+          <span class="text-orange-500">40</span>
+        </a>
+
+        <!-- Menu burger pour mobile -->
+        <div class="menu-toggle md:hidden" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Liens de navigation pour desktop -->
+        <ul class="flex gap-6 text-sm font-medium hidden md:flex">
+          <li><a href="/" class="smooth-scroll hover:text-blue-600 transition-colors">Accueil</a></li>
+          <li><a href="#apropos" class="smooth-scroll hover:text-blue-600 transition-colors">À propos</a></li>
+          <li><a href="#resultats" class="smooth-scroll hover:text-blue-600 transition-colors">Pour qui ?</a></li>
+          <li><a href="#programme" class="smooth-scroll hover:text-blue-600 transition-colors">Programme</a></li>
+          <li><a href="/questionnaire" class="smooth-scroll hover:text-blue-600 transition-colors">Mon bilan bien-être</a></li>
+          <li><a href="#contact" class="smooth-scroll hover:text-blue-600 transition-colors">Contact</a></li>
+        </ul>
+
+        <!-- Menu mobile -->
+        <div class="mobile-menu" id="mobileMenu">
+          <ul>
+            <li><a href="/" class="smooth-scroll hover:text-blue-600 transition-colors">Accueil</a></li>
+            <li><a href="#apropos" class="smooth-scroll hover:text-blue-600 transition-colors">À propos</a></li>
+            <li><a href="#resultats" class="smooth-scroll hover:text-blue-600 transition-colors">Pour qui ?</a></li>
+            <li><a href="#programme" class="smooth-scroll hover:text-blue-600 transition-colors">Programme</a></li>
+            <li><a href="/questionnaire" class="smooth-scroll hover:text-blue-600 transition-colors">Mon bilan bien-être</a></li>
+            <li><a href="#contact" class="smooth-scroll hover:text-blue-600 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="pt-20">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-blue-700 text-white py-12 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="mb-4">&copy; 2025 Après40 Coaching. Tous droits réservés.</p>
+        <ul class="flex justify-center gap-6">
+          <li><a href="#" class="hover:text-orange-300 transition-colors">Mentions légales</a></li>
+          <li><a href="#" class="hover:text-orange-300 transition-colors">Politique de confidentialité</a></li>
+          <li><a href="mailto:contact@apres40.fr" class="hover:text-orange-300 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- SCRIPT POUR LE MENU BURGER ET LE SMOOTH SCROLL -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Gestion du menu burger
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+        });
+
+        // Gestion des liens d'ancre
+        document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            // Si le lien pointe vers une ancre sur la page d'accueil
+            if (href.startsWith('#')) {
+              e.preventDefault();
+
+              // Si on est déjà sur la page d'accueil, on fait un scroll fluide
+              if (window.location.pathname === '/') {
+                const targetId = href.split('#')[1];
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+              // Sinon, on redirige vers la page d'accueil avec l'ancre
+              else {
+                window.location.href = `/${href}`;
+              }
+
+              // Fermer le menu mobile après clic
+              if (mobileMenu.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+              }
+            }
+          });
+        });
+
+        // Animation au scroll pour les sections
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('fade-up-visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

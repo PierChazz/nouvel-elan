@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === TYPOGRAPHIE === */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: white;
+  color: #1f2937; /* gris neutre */
+  scroll-behavior: smooth;
+}
+
+/* === ANIMATIONS AU SCROLL === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* === BOUTONS === */
+.btn {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  background: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #2563eb, #f97316); /* bleu → orange */
+  color: white !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === HEADER === */
+header {
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.smooth-scroll {
+  transition: all 0.3s ease;
+}
+

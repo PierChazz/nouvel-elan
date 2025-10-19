@@ -1,0 +1,178 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Questionnaire Bien-être">
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-blue-600 to-orange-500 text-white py-20 px-6 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">Évaluez votre bien-être en 2 minutes</h1>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">
+      Répondez à ces 5 questions pour faire le point sur votre énergie, votre forme et votre confiance.
+      <br />À la fin, recevez un <strong>bilan personnalisé</strong> et des conseils adaptés.
+    </p>
+  </section>
+
+
+
+  <!-- QUESTIONNAIRE -->
+  <section class="py-12 px-6 max-w-3xl mx-auto">
+    <form id="questionnaire-form" class="space-y-8">
+      <!-- Question 1 -->
+      <div class="questionnaire-item p-6 bg-gray-50 rounded-lg">
+        <p class="text-lg font-medium mb-4">1. Est-ce qu’il vous arrive de ne pas vous sentir totalement à l’aise avec votre corps ?</p>
+        <div class="flex gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q1" value="1" required class="h-5 w-5 text-orange-500" />
+            <span>Oui</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q1" value="0" class="h-5 w-5 text-orange-500" />
+            <span>Non</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="questionnaire-item p-6 bg-gray-50 rounded-lg">
+        <p class="text-lg font-medium mb-4">2. Ressentez-vous parfois un manque d’énergie au cours de vos journées ?</p>
+        <div class="flex gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q2" value="1" required class="h-5 w-5 text-orange-500" />
+            <span>Oui</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q2" value="0" class="h-5 w-5 text-orange-500" />
+            <span>Non</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="questionnaire-item p-6 bg-gray-50 rounded-lg">
+        <p class="text-lg font-medium mb-4">3. Avez-vous déjà le sentiment que votre forme physique pourrait être meilleure ?</p>
+        <div class="flex gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q3" value="1" required class="h-5 w-5 text-orange-500" />
+            <span>Oui</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q3" value="0" class="h-5 w-5 text-orange-500" />
+            <span>Non</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="questionnaire-item p-6 bg-gray-50 rounded-lg">
+        <p class="text-lg font-medium mb-4">4. Vous arrive-t-il de manquer de régularité ou de discipline dans vos habitudes ?</p>
+        <div class="flex gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q4" value="1" required class="h-5 w-5 text-orange-500" />
+            <span>Oui</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q4" value="0" class="h-5 w-5 text-orange-500" />
+            <span>Non</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="questionnaire-item p-6 bg-gray-50 rounded-lg">
+        <p class="text-lg font-medium mb-4">5. Pensez-vous qu’améliorer votre bien-être aurait un impact positif sur votre vie ?</p>
+        <div class="flex gap-6">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q5" value="1" required class="h-5 w-5 text-orange-500" />
+            <span>Oui</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="q5" value="0" class="h-5 w-5 text-orange-500" />
+            <span>Non</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Champ email OPTIONNEL -->
+      <div class="p-6 bg-gray-50 rounded-lg">
+        <p class="text-lg font-medium mb-4">
+          Souhaitez-vous recevoir votre bilan personnalisé par email ?
+          <span class="text-sm text-gray-500">(Optionnel)</span>
+        </p>
+        <div class="flex flex-col gap-4">
+          <input
+            type="email"
+            id="email"
+            placeholder="Votre email"
+            class="p-3 border rounded-lg focus:ring-2 focus:ring-orange-500"
+          />
+          <p class="text-sm text-gray-500">
+            Votre email ne sera utilisé que pour vous envoyer votre bilan et des conseils personnalisés.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bouton de soumission -->
+      <div class="text-center">
+        <button
+          type="submit"
+          class="bg-orange-500 text-white px-8 py-3 rounded-full font-medium hover:bg-orange-600 transition-colors"
+        >
+          Voir mon bilan
+        </button>
+      </div>
+    </form>
+
+    <!-- Résultat (caché par défaut) -->
+    <div id="resultat" class="hidden mt-12 p-6 bg-white rounded-lg shadow-md text-center">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Votre bilan bien-être</h2>
+      <p id="score-text" class="text-lg mb-4"></p>
+      <p id="conseil" class="text-gray-700 mb-6"></p>
+      <a
+        href="mailto:contact@apres40.fr?subject=Appel découverte Après40"
+        class="inline-block bg-blue-700 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-800"
+      >
+        Réserver mon appel découverte gratuit
+      </a>
+    </div>
+  </section>
+
+  <!-- Script pour le scoring et l'affichage du résultat -->
+  <script>
+    document.getElementById('questionnaire-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Calcul du score
+      const q1 = parseInt(document.querySelector('input[name="q1"]:checked')?.value || 0);
+      const q2 = parseInt(document.querySelector('input[name="q2"]:checked')?.value || 0);
+      const q3 = parseInt(document.querySelector('input[name="q3"]:checked')?.value || 0);
+      const q4 = parseInt(document.querySelector('input[name="q4"]:checked')?.value || 0);
+      const q5 = parseInt(document.querySelector('input[name="q5"]:checked')?.value || 0);
+
+      const score = q1 + q2 + q3 + q4 + q5;
+      const email = document.getElementById('email').value;
+
+      // Affichage du résultat
+      const resultatDiv = document.getElementById('resultat');
+      const scoreText = document.getElementById('score-text');
+      const conseil = document.getElementById('conseil');
+
+      let message = '';
+      if (score >= 4) {
+        message = `Votre score : ${score}/5. Vos réponses montrent que vous pourriez bénéficier d'un accompagnement pour retrouver énergie et confiance.`;
+        conseil.textContent = "Un coaching personnalisé pourrait vous aider à installer des habitudes durables et à transformer votre bien-être.";
+      } else if (score >= 2) {
+        message = `Votre score : ${score}/5. Vous avez quelques défis à relever pour optimiser votre bien-être.`;
+        conseil.textContent = "Des ajustements ciblés dans votre routine pourraient faire une grande différence. Un appel découverte peut vous éclairer.";
+      } else {
+        message = `Votre score : ${score}/5. Félicitations, votre bien-être semble déjà bien installé !`;
+        conseil.textContent = "Continuez ainsi, et n'hésitez pas à me contacter pour aller encore plus loin.";
+      }
+
+      scoreText.textContent = message;
+      resultatDiv.classList.remove('hidden');
+
+      // Scroll vers le résultat
+      resultatDiv.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</Layout>
