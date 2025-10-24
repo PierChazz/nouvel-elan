@@ -183,12 +183,15 @@ Cette transformation ne fut pas seulement physique, mais aussi intérieure : j�
         Fais le premier pas vers ta transformation dès aujourd’hui avec un <strong>appel découverte gratuit de 30 minutes</strong>.
       </p>
     
-<button
-        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/apres40/30min'});return false;"
-        class="btn bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 fade-up fade-delay-2"
-      >
-        Réserver mon appel gratuit
-      </button>
+<link href="https://assets.calendly." rel="stylesheet">
+<script src="https://assets.calendly." type="text/javascript" async></script>
+
+<!-- Intégration inline (fonctionne à 100%) -->
+<div
+class="calendly-inline-widget"
+data-url="https://calendly."
+style="min-width:320px;height:630px;"
+></div>
     </div>
   </section>
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
